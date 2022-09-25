@@ -27,6 +27,25 @@ function newItem(src_path, left_position, bottom_position) {
 }
 
 
+//function to add background to screen
+
+function screenBackground(src_path, left_position, bottom_position, width, height) {
+    for(let i = 0; i < height; i++) {
+        for(let j = 0; j < width; j++) {
+            newImage(src_path, (left_position + j * 100) + 'px', (bottom_position + i * 100) + 'px')
+        }
+    }
+}
+
+
+
+let grassHeight = window.innerHeight * 0.75;
+let skyHeight = window.innerHeight - grassHeight;
+
+
+screenBackground('assets/grass.png', 0, 0, window.innerWidth/100, grassHeight/100);
+screenBackground('assets/sky.png', 0, grassHeight, window.innerWidth/100, skyHeight/100);
+
 
 newImage('assets/tree.png', '200px', '300px');
 newImage('assets/pillar.png', '350px', '100px');
