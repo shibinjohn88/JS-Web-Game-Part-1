@@ -8,18 +8,19 @@ function newImage(src_path, left_position, bottom_position) {
     element.style.left = left_position;
     element.style.bottom = bottom_position;
     document.body.append(element);
+    return element;
     
 }
 
 //function to add and remove items.
 function newItem(src_path, left_position, bottom_position) {
-    let element = document.createElement('img');
-    element.src = src_path;
-    element.style.position = 'fixed';
-    element.style.left = left_position;
-    element.style.bottom = bottom_position;
-    document.body.append(element);
-    
+    // let element = document.createElement('img');
+    // element.src = src_path;
+    // element.style.position = 'fixed';
+    // element.style.left = left_position;
+    // element.style.bottom = bottom_position;
+    // document.body.append(element);
+    let element = newImage(src_path, left_position, bottom_position);
     //event listener to remove items when double clicked
     element.addEventListener('dblclick', function(){
         element.remove();
